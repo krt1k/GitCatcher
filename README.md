@@ -24,7 +24,7 @@ GitCatcher is a Bash script that automates the process of checking for and execu
 
 ### Prerequisites
 
-Before using GitWatcher, ensure you have the following:
+Before using GitCatcher, ensure you have the following:
 
 - Linux-based operating system.
 - Git installed on your system.
