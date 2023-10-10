@@ -5,7 +5,6 @@ GitCatcher is a Bash script that automates the process of checking for and execu
 
 ## Contents
 
-- [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
