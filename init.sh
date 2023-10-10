@@ -6,20 +6,16 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-cd /etc
+# Creating the directory where the script will be stored
+mkdir -p /etc/GitCatcher
+cp -r . /etc/GitCatcher/
 
-apt install git -y
+# Specify the Git repository URL
+read -p "Enter the git repo url that you want to sync: " git_url
 
-git clone https://github.com/krt1k/GitCatcher.git
-
-GIT_REPO_DIR=$(basename -s .git "$GIT_REPO_URL")
-
-cd "$GIT_REPO_DIR"
-
-read -p "Enter the git repo url: " git_url
-
+# Add the git repo url to the script
 sed -i "4i GIT_REPO_URL=$git_url" /etc/GitCatcher/run.sh
-
 chmod +x /etc/GitCatcher/run.sh
 
-echo "@reboot root /etc/GitCatcher/run.sh" >> /etc/crontab
+# create a cronjob that runs the script every hour
+echo "0 * * * * root /etc/GitCatcher/run.sh" >> /etc/crontab
