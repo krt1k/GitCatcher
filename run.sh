@@ -11,6 +11,8 @@ chmod +x "$REPO_DIR"/*.sh
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
 
+touch "$LOG_FILE"
+
 # Ensure the repository directory exists or clone it if it doesn't
 if [ ! -d "$REPO_DIR" ]; then
     git clone "$GIT_REPO_URL" "$REPO_DIR"
