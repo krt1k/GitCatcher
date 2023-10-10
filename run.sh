@@ -18,7 +18,7 @@ if [ ! -d "$REPO_DIR" ]; then
     git clone "$GIT_REPO_URL" "$REPO_DIR"
 
     #run the script for the first time
-    if bash run.sh >> "$LOG_FILE" 2>&1; then
+    if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
         # Log successful execution
         echo "Script executed successfully on $(date)" >> "$LOG_FILE"
     else
@@ -39,7 +39,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
     git pull
 
     # Execute the script from the latest commit and log both stdout and stderr
-    if bash run.sh >> "$LOG_FILE" 2>&1; then
+    if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
         # Log successful execution
         echo "Script executed successfully on $(date)" >> "$LOG_FILE"
     else
