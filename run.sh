@@ -15,15 +15,19 @@ touch "$LOG_FILE"
 
 # Ensure the repository directory exists or clone it if it doesn't
 if [ ! -d "$REPO_DIR" ]; then
+    echo "Cloning $GIT_REPO_URL into $REPO_DIR"
     git clone "$GIT_REPO_URL" "$REPO_DIR"
+    echo
 
     #run the script for the first time
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
         # Log successful execution
         echo "Script executed successfully on $(date)" >> "$LOG_FILE"
+        echo
     else
         # Log an error if the script execution fails
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
+        echo
     fi
 fi
 
@@ -31,11 +35,17 @@ fi
 cd "$REPO_DIR"
 
 # Fetch the latest changes from the remote repository
-git fetch
+echo "Fetching the latest changes for $GIT_REPO_URL"
+git fetch --all
+echo
 
 # Check if there are any new commits in the remote repository
 if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
     # Pull the latest changes
+    echo "Previous commit hash: $(git rev-parse HEAD)"
+    echo "Latest commit hash: $(git rev-parse @{u})"
+    echo
+    echo "Pulling the latest changes for $GIT_REPO_URL"
     git pull
 
     # Execute the script from the latest commit and log both stdout and stderr
