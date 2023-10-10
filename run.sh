@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the Git repository URL
-
+GIT_REPO_URL=$1
 GIT_REPO_DIR=$(basename -s .git "$GIT_REPO_URL")
 
 # Directory where the Git repository will be cloned
