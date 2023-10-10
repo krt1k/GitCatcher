@@ -21,3 +21,5 @@ read -p "Enter the git repo url: " git_url
 sed -i "4i GIT_REPO_URL=$git_url" /etc/GitCatcher/run.sh
 
 chmod +x /etc/GitCatcher/run.sh
+
+echo "@reboot root /etc/GitCatcher/run.sh" >> /etc/crontab
