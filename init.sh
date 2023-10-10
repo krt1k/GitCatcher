@@ -18,4 +18,6 @@ read -p "Enter the git repo url that you want to sync: " git_url
 chmod +x /etc/GitCatcher/run.sh
 
 # create a cronjob that runs the script every hour
-echo "0 * * * * root bash /etc/GitCatcher/run.sh $git_url" >> /etc/crontab
+echo "* * * * * root bash /etc/GitCatcher/run.sh $git_url >> /var/log/GitCatcher.log 2>&1" >> /etc/crontab 
+# TODO change the cronjob to run every hour
+# TODO remove the log file of the cronjob

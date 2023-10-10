@@ -19,6 +19,8 @@ if [ ! -d "$REPO_DIR" ]; then
     git clone "$GIT_REPO_URL" "$REPO_DIR"
     echo
 
+    git config --global --add safe.directory "$REPO_DIR"
+
     #run the script for the first time
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
         # Log successful execution
@@ -41,12 +43,13 @@ echo
 
 # Check if there are any new commits in the remote repository
 if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
+    
+    # Remove the existing repository directory
+    cd /etc/GitCatcher
+    rm -rf "$REPO_DIR"
+
     # Pull the latest changes
-    echo "Previous commit hash: $(git rev-parse HEAD)"
-    echo "Latest commit hash: $(git rev-parse @{u})"
-    echo
-    echo "Pulling the latest changes for $GIT_REPO_URL"
-    git pull
+    git clone "$GIT_REPO_URL"
 
     # Execute the script from the latest commit and log both stdout and stderr
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
