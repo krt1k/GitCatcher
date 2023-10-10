@@ -1,11 +1,8 @@
 
 # GitCatcher
 
-GitCatcher is a Bash script that automates the process of checking for and executing the latest script from a specified Git repository on every system reboot. It's designed to simplify the task of keeping your system's scripts up to date.
+GitCatcher is a Bash script that automates the process of checking for and executing the latest script from a specified Git repository on every hour. It's designed to simplify the task of keeping your system's scripts up to date.
 
-## Introduction
-
-GitCatcher is a Bash script designed to automate the process of checking for and executing the latest script from a specified Git repository on every hour. It simplifies the task of keeping your system's scripts up to date.
 ## Contents
 
 - [Introduction](#introduction)
