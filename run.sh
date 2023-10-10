@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Specify the Git repository URL
-GIT_REPO_URL="$1"
+
+GIT_REPO_DIR=$(basename -s .git "$GIT_REPO_URL")
 
 # Directory where the Git repository will be cloned
-REPO_DIR="/etc/gitcatcher/"
+REPO_DIR="/etc/GitCatcher/$(GIT_REPO_DIR)"
 
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
@@ -12,6 +13,8 @@ LOG_FILE="/var/log/gitcatcher.log"
 # Ensure the repository directory exists or clone it if it doesn't
 if [ ! -d "$REPO_DIR" ]; then
     git clone "$GIT_REPO_URL" "$REPO_DIR"
+    chmod +x "$REPO_DIR"/run.sh
+    chmod +x "$REPO_DIR"/init.sh
 fi
 
 # Change to the repository directory
