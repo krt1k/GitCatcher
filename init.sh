@@ -14,7 +14,7 @@ git clone https://github.com/krt1k/GitCatcher.git
 
 GIT_REPO_DIR=$(basename -s .git "$GIT_REPO_URL")
 
-cd $GIT_REPO_DIR
+cd "$GIT_REPO_DIR"
 
 read -p "Enter the git repo url: " git_url
 
