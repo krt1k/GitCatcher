@@ -14,7 +14,7 @@ GitCatcher is a Bash script that automates the process of checking for and execu
 
 ## Features
 
-- Automatically clones or updates a specified Git repository on system boot.
+- Automatically clones or updates a specified Git repository on every hour.
 - Checks for new commits and executes the latest script from the repository.
 - Easily configurable with the repository URL and script file.
 - Logs execution for reference.
