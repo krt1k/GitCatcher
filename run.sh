@@ -60,3 +60,4 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
     fi
 fi
+
