@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Check if user has root privileges
 if [ "$(id -u)" != "0" ]; then
     echo "This script must be run as root"
@@ -23,5 +25,4 @@ chmod +x /usr/bin/run
 current_minute=$(date +"%M")
 
 # create a cronjob that runs the script every three hour
-# TODO: make the cronjob run every 8 hours
-echo "* * * * * root /usr/bin/run" >> /etc/crontab 
+echo "$current_minute * * * * root /usr/bin/run" >> /etc/crontab 
