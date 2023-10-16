@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Check if user has root privileges
 if [ "$(id -u)" != "0" ]; then
     echo "This script must be run as root"
@@ -13,11 +15,14 @@ mkdir -p /etc/GitCatcher
 cp -r . /etc/GitCatcher/
 
 # Specify the Git repository URL
-read -p "Enter the git repo url that you want to sync: " git_url
+# read -p "Enter the git repo url that you want to sync: " git_url
 
-chmod +x /etc/GitCatcher/run.sh
+# git_url="https://github.com/krt1k/gitcatcher_test.git"
+
+cp /etc/GitCatcher/run /usr/bin/run
+chmod +x /usr/bin/run
 
 current_minute=$(date +"%M")
 
 # create a cronjob that runs the script every three hour
-echo "$current_minute */8 * * * root bash /etc/GitCatcher/run.sh $git_url" >> /etc/crontab 
+echo "$current_minute * * * * root /usr/bin/run" >> /etc/crontab 
