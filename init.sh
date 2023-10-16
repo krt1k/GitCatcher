@@ -24,4 +24,4 @@ current_minute=$(date +"%M")
 
 # create a cronjob that runs the script every three hour
 # TODO: make the cronjob run every 8 hours
-echo "* * * * * root bash /usr/bin/run $git_url" >> /etc/crontab 
+echo "* * * * * root /usr/bin/run $git_url" >> /etc/crontab 
