@@ -42,7 +42,7 @@ git fetch --all
 echo
 
 # Check if there are any new commits in the remote repository
-if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
+if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/main")" ]; then
     
     # Remove the existing repository directory
     cd /etc/GitCatcher
