@@ -15,7 +15,7 @@ cp -r . /etc/GitCatcher/
 # Specify the Git repository URL
 # read -p "Enter the git repo url that you want to sync: " git_url
 
-git_url="https://github.com/krt1k/gitcatcher_test.git"
+# git_url="https://github.com/krt1k/gitcatcher_test.git"
 
 cp /etc/GitCatcher/run /usr/bin/run
 chmod +x /usr/bin/run
@@ -24,4 +24,4 @@ current_minute=$(date +"%M")
 
 # create a cronjob that runs the script every three hour
 # TODO: make the cronjob run every 8 hours
-echo "* * * * * root /usr/bin/run $git_url" >> /etc/crontab 
+echo "* * * * * root /usr/bin/run" >> /etc/crontab 
