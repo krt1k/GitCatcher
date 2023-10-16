@@ -6,7 +6,7 @@ GIT_REPO_DIR=$(basename -s .git "$GIT_REPO_URL")
 
 # Directory where the Git repository will be cloned
 REPO_DIR="/etc/GitCatcher/$GIT_REPO_DIR"
-chmod +x "$REPO_DIR"/*.sh
+chmod +x "$REPO_DIR"/*
 
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
@@ -22,7 +22,7 @@ if [ ! -d "$REPO_DIR" ]; then
     git config --global --add safe.directory "$REPO_DIR"
 
     #run the script for the first time
-    if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
+    if /usr/bin/run >> "$LOG_FILE" 2>&1; then
         # Log successful execution
         echo "Script executed successfully on $(date)" >> "$LOG_FILE"
         echo
@@ -52,7 +52,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse @{u})" ]; then
     git clone "$GIT_REPO_URL"
 
     # Execute the script from the latest commit and log both stdout and stderr
-    if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
+    if /usr/bin/run >> "$LOG_FILE" 2>&1; then
         # Log successful execution
         echo "Script executed successfully on $(date)" >> "$LOG_FILE"
     else
