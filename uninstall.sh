@@ -9,3 +9,5 @@ rm -rf /etc/GitCatcher
 
 # remove the last line of /etc/crontab
 sed -i '$ d' /etc/crontab
+
+rm -f /usr/bin/run
