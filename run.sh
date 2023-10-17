@@ -10,7 +10,6 @@ GIT_REPO_DIR="gitcatcher_test"
 
 # Directory where the Git repository will be cloned
 REPO_DIR="/etc/GitCatcher/$GIT_REPO_DIR"
-chmod +x "$REPO_DIR"/*
 
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
@@ -22,6 +21,9 @@ if [ ! -d "$REPO_DIR" ]; then
     echo "Cloning $GIT_REPO_URL into $REPO_DIR"
     git clone "$GIT_REPO_URL" "$REPO_DIR"
     echo
+
+    chmod +x "$REPO_DIR"/*
+
 
     git config --global --add safe.directory "$REPO_DIR"
 
@@ -54,7 +56,9 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
 
     # Pull the latest changes
     git clone "$GIT_REPO_URL"
+    chmod +x "$REPO_DIR"/*
 
+    
     # Execute the script from the latest commit and log both stdout and stderr
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
         # Log successful execution
