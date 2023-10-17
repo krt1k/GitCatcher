@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 /etc/GitCatcher/creds 98098
 
 # Specify the Git repository URL
