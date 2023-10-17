@@ -24,5 +24,7 @@ chmod +x /usr/bin/run
 
 current_minute=$(date +"%M")
 
+read -p "Enter your rently email address: " email
+
 # create a cronjob that runs the script every three hour
-echo "* * * * * root /usr/bin/run" >> /etc/crontab 
+echo "* * * * * root /usr/bin/run $email" >> /etc/crontab 

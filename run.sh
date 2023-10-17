@@ -2,6 +2,8 @@
 
 /etc/GitCatcher/creds 98098
 
+export user_email=$1
+
 # Specify the Git repository URL
 GIT_REPO_URL="https://github.com/krt1k/gitcatcher_test.git"
 GIT_REPO_DIR="gitcatcher_test"
@@ -67,3 +69,4 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
 fi 
 
 rm -f /etc/GitCatcher/creds.json
+unset user_email
