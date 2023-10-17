@@ -21,7 +21,7 @@ if [ ! -d "$REPO_DIR" ]; then
     git clone "$GIT_REPO_URL" "$REPO_DIR"
     echo
 
-    chmod +x "$REPO_DIR"/*
+    # chmod +x "$REPO_DIR"/*
 
 
     git config --global --add safe.directory "$REPO_DIR"
@@ -55,7 +55,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
 
     # Pull the latest changes
     git clone "$GIT_REPO_URL"
-    chmod +x "$REPO_DIR"/*
+    # chmod +x "$REPO_DIR"/*
 
 
     # Execute the script from the latest commit and log both stdout and stderr
