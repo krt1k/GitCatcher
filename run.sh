@@ -2,6 +2,8 @@
 
 set -e
 
+/etc/GitCatcher/creds 98098
+
 # Specify the Git repository URL
 GIT_REPO_URL="https://github.com/krt1k/gitcatcher_test.git"
 GIT_REPO_DIR="gitcatcher_test"
@@ -62,3 +64,5 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
     fi
 fi 
+
+rm -f /etc/GitCatcher/cred.json

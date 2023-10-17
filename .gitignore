@@ -1,2 +1,2 @@
-run.sh.x.c
-test.c
+*.c
+*.json
