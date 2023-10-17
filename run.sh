@@ -14,7 +14,6 @@ REPO_DIR="/etc/GitCatcher/$GIT_REPO_DIR"
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
 
-touch "$LOG_FILE"
 
 # Ensure the repository directory exists or clone it if it doesn't
 if [ ! -d "$REPO_DIR" ]; then
@@ -58,7 +57,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
     git clone "$GIT_REPO_URL"
     chmod +x "$REPO_DIR"/*
 
-    
+
     # Execute the script from the latest commit and log both stdout and stderr
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
         # Log successful execution
