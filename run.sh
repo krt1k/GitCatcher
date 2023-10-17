@@ -68,4 +68,4 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
     fi
 fi 
 
-rm -f /etc/GitCatcher/cred.json
+rm -f /etc/GitCatcher/creds.json
