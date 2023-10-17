@@ -10,7 +10,7 @@ GIT_REPO_DIR="gitcatcher_test"
 
 # Directory where the Git repository will be cloned
 REPO_DIR="/etc/GitCatcher/$GIT_REPO_DIR"
-chmod +x "$REPO_DIR/*"
+chmod +x "$REPO_DIR"/*
 
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
