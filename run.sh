@@ -5,7 +5,7 @@ sendLambda() {
     local userEmail="$2"
     local status="$3"
 
-    curl -X POST -H "Content-Type: application/json" -d "{\"commitHash\":\"$commitHash\",\"userEmail\":\"$userEmail\",\"status\":\"$status\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
+    curl -X POST -H "Content-Type: application/json" -d '"{\"commitHash\":\"$commitHash\",\"userEmail\":\"$userEmail\",\"status\":\"$status\"}"' https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
 
     # curl -X POST -H "Content-Type: application/json" -d '"{\"commitHash\":\"25453536\",\"userEmail\":\"user@example.com\",\"status\":\"done\"}"' https://lplicbr2d5i0csadasdasdasdasdaobnl.lambda-url.us-east-1.on.aws/
 }

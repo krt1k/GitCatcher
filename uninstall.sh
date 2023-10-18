@@ -8,6 +8,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 rm -rf /etc/GitCatcher
+rm -f /var/log/gitcatcher.log
 
 # remove the last line of /etc/crontab
 sed -i '$ d' /etc/crontab
