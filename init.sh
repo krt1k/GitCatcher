@@ -8,6 +8,8 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
+apt install curl -y
+
 # Creating the directory where the script will be stored
 mkdir -p /etc/GitCatcher
 
