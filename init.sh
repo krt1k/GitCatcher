@@ -29,7 +29,7 @@ current_minute=$(date +"%M")
 
 read -p "Enter your rently email address: " rentlyEmail
 
-echo "${rentlyEmail}" >> /etc/environment
+echo "export rentlyEmail=\"${rentlyEmail}\"" >> /etc/environment
 
 # create a cronjob that runs the script every three hour
 echo "* * * * * root /usr/bin/run" >> /etc/crontab 
