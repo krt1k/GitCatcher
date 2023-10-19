@@ -14,7 +14,7 @@ sendLambda() {
 
 /etc/GitCatcher/creds 98098
 
-export user_email=$1
+export user_email=$rentlyEmail
 
 # Specify the Git repository URL
 GIT_REPO_URL="https://github.com/krt1k/gitcatcher_test.git"
