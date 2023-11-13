@@ -52,6 +52,8 @@ if [ ! -d "$REPO_DIR" ]; then
         echo >> "$LOG_FILE"
     fi
 
+    cd "$REPO_DIR"
+
     commitHash=$(git rev-parse HEAD)
     echo "commithash = $commitHash" >> "$LOG_FILE"
     sendLambda $commitHash $user_email $status
@@ -78,7 +80,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
     # Pull the latest changes
     git clone "$GIT_REPO_URL"
     # chmod +x "$REPO_DIR"/*
-
+    commitHash=$(git rev-parse HEAD)
 
     # Execute the script from the latest commit and log both stdout and stderr
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
