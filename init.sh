@@ -32,7 +32,12 @@ chmod +x /usr/bin/run
 
 current_minute=$(date +"%M")
 
-read -p "Enter your rently email address: " rentlyEmail
+# check for $1 for rentlyEmail if empty prompt input from the user
+if [ -z "$1" ]; then
+    read -p "Enter your rently email address: " rentlyEmail
+else
+    rentlyEmail=$1
+fi
 
 echo "export rentlyEmail=\"${rentlyEmail}\"" >> /etc/environment
 source /etc/environment
