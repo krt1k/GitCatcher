@@ -8,6 +8,14 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
+apt update
+
+# check for curl and install if not present
+if ! [ -x "$(command -v curl)" ]; then
+    echo "Installing curl"
+    apt install curl -y
+fi
+
 # Creating the directory where the script will be stored
 mkdir -p /etc/GitCatcher
 
@@ -24,5 +32,10 @@ chmod +x /usr/bin/run
 
 current_minute=$(date +"%M")
 
+read -p "Enter your rently email address: " rentlyEmail
+
+echo "export rentlyEmail=\"${rentlyEmail}\"" >> /etc/environment
+source /etc/environment
+
 # create a cronjob that runs the script every three hour
-echo "$current_minute * * * * root /usr/bin/run" >> /etc/crontab 
+echo "* * * * * root /usr/bin/run" >> /etc/crontab 
