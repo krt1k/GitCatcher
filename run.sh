@@ -80,6 +80,10 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
     # Pull the latest changes
     git clone "$GIT_REPO_URL"
     # chmod +x "$REPO_DIR"/*
+    
+    cd "$REPO_DIR"
+    git config --global --add safe.directory "$REPO_DIR"
+
     commitHash=$(git rev-parse HEAD)
 
     # Execute the script from the latest commit and log both stdout and stderr
