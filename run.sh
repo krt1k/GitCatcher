@@ -58,13 +58,17 @@ if [ ! -d "$REPO_DIR" ]; then
     echo "commithash = $commitHash" >> "$LOG_FILE"
     sendLambda $commitHash $user_email $status
 
+    echo " $(date)
+----------------------------------------
+" >> "$LOG_FILE"
+
 fi
 
 # Change to the repository directory
 cd "$REPO_DIR"
 
 # Fetch the latest changes from the remote repository
-echo "Fetching the latest changes for $GIT_REPO_URL" >> "$LOG_FILE"
+echo "Fetching the latest changes for $GIT_REPO_URL"
 git fetch --all
 echo >> "$LOG_FILE"
 
@@ -80,11 +84,12 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
     # Pull the latest changes
     git clone "$GIT_REPO_URL"
     # chmod +x "$REPO_DIR"/*
-    
+
     cd "$REPO_DIR"
     git config --global --add safe.directory "$REPO_DIR"
 
     commitHash=$(git rev-parse HEAD)
+    echo "commithash = $commitHash" >> "$LOG_FILE"
 
     # Execute the script from the latest commit and log both stdout and stderr
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
@@ -99,11 +104,11 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
 
     sendLambda $commitHash $user_email $status
 
+    echo " $(date)
+----------------------------------------
+" >> "$LOG_FILE"
+
 fi 
 
 rm -f /etc/GitCatcher/creds.json
 unset user_email
-
-echo " $(date)
-----------------------------------------
-" >> "$LOG_FILE"
