@@ -38,7 +38,6 @@ if [ ! -d "$REPO_DIR" ]; then
 
 
     git config --global --add safe.directory "$REPO_DIR"
-    commitHash=$(git rev-parse HEAD)
 
     #run the script for the first time
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
@@ -53,6 +52,8 @@ if [ ! -d "$REPO_DIR" ]; then
         echo
     fi
 
+    commitHash=$(git rev-parse HEAD)
+    echo "commithash = $commitHash"
     sendLambda $commitHash $user_email $status
 
 fi
