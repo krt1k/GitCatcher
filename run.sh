@@ -30,9 +30,9 @@ LOG_FILE="/var/log/gitcatcher.log"
 
 # Ensure the repository directory exists or clone it if it doesn't
 if [ ! -d "$REPO_DIR" ]; then
-    echo "Cloning $GIT_REPO_URL into $REPO_DIR"
+    echo "Cloning $GIT_REPO_URL into $REPO_DIR" >> "$LOG_FILE"
     git clone "$GIT_REPO_URL" "$REPO_DIR"
-    echo
+    echo >> "$LOG_FILE"
 
     # chmod +x "$REPO_DIR"/*
 
@@ -44,16 +44,16 @@ if [ ! -d "$REPO_DIR" ]; then
         # Log successful execution
         status="success"
         echo "Script executed successfully on $(date)" >> "$LOG_FILE"
-        echo
+        echo >> "$LOG_FILE"
     else
         # Log an error if the script execution fails
         status="fail"
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
-        echo
+        echo >> "$LOG_FILE"
     fi
 
     commitHash=$(git rev-parse HEAD)
-    echo "commithash = $commitHash"
+    echo "commithash = $commitHash" >> "$LOG_FILE"
     sendLambda $commitHash $user_email $status
 
 fi
@@ -62,9 +62,9 @@ fi
 cd "$REPO_DIR"
 
 # Fetch the latest changes from the remote repository
-echo "Fetching the latest changes for $GIT_REPO_URL"
+echo "Fetching the latest changes for $GIT_REPO_URL" >> "$LOG_FILE"
 git fetch --all
-echo
+echo >> "$LOG_FILE"
 
 commitHash=$(git rev-parse HEAD)
 
@@ -97,3 +97,7 @@ fi
 
 rm -f /etc/GitCatcher/creds.json
 unset user_email
+
+echo " $(date)
+----------------------------------------
+" >> "$LOG_FILE"
