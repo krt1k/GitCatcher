@@ -56,7 +56,7 @@ if [ ! -d "$REPO_DIR" ]; then
 
     commitHash=$(git rev-parse HEAD)
     echo "commithash = $commitHash" >> "$LOG_FILE"
-    sendLambda $commitHash $user_email $status
+    sendLambda $commitHash $user_email $status >> "$LOG_FILE"
 
     echo " $(date)
 ----------------------------------------
@@ -102,7 +102,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
     fi
 
-    sendLambda $commitHash $user_email $status
+    sendLambda $commitHash $user_email $status >> "$LOG_FILE"
 
     echo " $(date)
 ----------------------------------------
