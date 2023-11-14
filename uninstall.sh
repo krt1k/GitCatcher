@@ -14,6 +14,6 @@ rm -f /var/log/gitcatcher.log
 sed -i '/rentlyEmail/d' /etc/environment
 
 # remove the last line of /etc/crontab
-sed -i '$ d' /etc/crontab
+sed -i '/run/d' /etc/crontab
 
 rm -f /usr/bin/run
