@@ -26,7 +26,7 @@ REPO_DIR="/etc/GitCatcher/$GIT_REPO_DIR"
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
 
-
+commitHash="unset"
 
 # Ensure the repository directory exists or clone it if it doesn't
 if [ ! -d "$REPO_DIR" ]; then
