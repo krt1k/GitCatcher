@@ -32,10 +32,18 @@ chmod +x /usr/bin/run
 
 current_minute=$(date +"%M")
 
-read -p "Enter your rently email address: " rentlyEmail
+# check for $1 for rentlyEmail if empty prompt input from the user
+if [ -z "$1" ]; then
+    read -p "Enter your rently email address: " rentlyEmail
+else
+    rentlyEmail=$1
+    echo "New email address: $rentlyEmail"
+fi
 
 echo "export rentlyEmail=\"${rentlyEmail}\"" >> /etc/environment
 source /etc/environment
 
 # create a cronjob that runs the script every three hour
-echo "$current_minute */3 * * * root /usr/bin/run" >> /etc/crontab 
+echo "$current_minute * * * * root /usr/bin/run" >> /etc/crontab 
+
+# script v1.11

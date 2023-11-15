@@ -2,18 +2,22 @@
 
 set -e
 
+# Check if user has root privileges
 if [ "$(id -u)" != "0" ]; then
     echo "This script must be run as root"
     exit 1
 fi
 
+# Remove the GitCatcher directory
 rm -rf /etc/GitCatcher
-rm -f /var/log/gitcatcher.log
 
-# unset rentlyEmail from the /etc/environment file
+# Remove the run script
+rm /usr/bin/run
+
+# Remove the cronjob
+sed -i '/root \/usr\/bin\/run/d' /etc/crontab
+
+# Remove the rentlyEmail environment variable
 sed -i '/rentlyEmail/d' /etc/environment
 
-# remove the last line of /etc/crontab
-sed -i '$ d' /etc/crontab
-
-rm -f /usr/bin/run
+echo "Uninstallation complete."
