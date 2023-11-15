@@ -37,6 +37,7 @@ if [ -z "$1" ]; then
     read -p "Enter your rently email address: " rentlyEmail
 else
     rentlyEmail=$1
+    echo "New email address: $rentlyEmail"
 fi
 
 echo "export rentlyEmail=\"${rentlyEmail}\"" >> /etc/environment
