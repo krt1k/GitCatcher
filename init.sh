@@ -46,4 +46,4 @@ source /etc/environment
 # create a cronjob that runs the script every three hour
 echo "* * * * * root /usr/bin/run" >> /etc/crontab 
 
-# script v1.1
+# script v1.11
