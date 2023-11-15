@@ -51,11 +51,11 @@ Follow these steps to set up GitCatcher on your system:
     sudo bash init.sh
     ```
 
-4. The initialization script will prompt you to enter the Git repository URL you want to sync. Provide the URL when prompted.
+4. The initialization script will prompt you to enter you email id. Provide the offficial mail id when prompted.
 
     for example:
     ```
-    Enter the git repo url that you want to sync: https://github.com/user/repo.git
+    Enter your rently email address: devsecops@rently.com
     ```
 
 GitCatcher will then create the necessary directories, set up a cron job to periodically run the synchronization script, and initiate the first synchronization.
