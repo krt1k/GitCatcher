@@ -1,9 +1,14 @@
 #!/bin/bash
 
 sendLambda() {
-    local commitHash="$1"
-    local userEmail="$2"
-    local status="$3"
+    local userEmail="$1"
+    local status="$2"
+    local commitHash="$3"
+
+    # if commithash is empty then set "unset"
+    if [ -z "$commitHash" ]; then
+        commitHash="unset"
+    fi
 
     curl -X POST -H "Content-Type: application/json" -d "{\"commitHash\":\"$commitHash\",\"userEmail\":\"$userEmail\",\"status\":\"$status\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
 
@@ -56,7 +61,7 @@ if [ ! -d "$REPO_DIR" ]; then
 
     commitHash=$(git rev-parse HEAD)
     echo "commithash = $commitHash" >> "$LOG_FILE"
-    sendLambda $commitHash $user_email $status >> "$LOG_FILE"
+    sendLambda $user_email $status $commitHash >> "$LOG_FILE"
 
     echo " $(date)
 ----------------------------------------
@@ -102,7 +107,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
     fi
 
-    sendLambda $commitHash $user_email $status >> "$LOG_FILE"
+    sendLambda $user_email $status $commitHash >> "$LOG_FILE"
 
     echo " $(date)
 ----------------------------------------
