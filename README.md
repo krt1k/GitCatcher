@@ -36,7 +36,7 @@ Follow these steps to set up GitCatcher on your system:
 1. Clone this repository to your local system:
 
     ```bash
-    git clone https://github.com/krt1k/GitCatcher.git
+    git clone https://github.com/rently-com/GitCatcher
     ```
 
 2. Change into the GitCatcher directory:
