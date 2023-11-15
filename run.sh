@@ -29,7 +29,7 @@ GIT_REPO_DIR="gitcatcher_test"
 REPO_DIR="/etc/GitCatcherScripts/$GIT_REPO_DIR"
 
 mkdir -p /etc/GitCatcherScripts
-
+ 
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
 
@@ -77,7 +77,7 @@ cd "$REPO_DIR"
 # Fetch the latest changes from the remote repository
 echo "Fetching the latest changes for $GIT_REPO_URL"
 git fetch --all
-echo >> "$LOG_FILE"
+# echo >> "$LOG_FILE"
 
 commitHash=$(git rev-parse HEAD)
 
