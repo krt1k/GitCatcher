@@ -26,7 +26,9 @@ GIT_REPO_URL="https://github.com/krt1k/gitcatcher_test.git"
 GIT_REPO_DIR="gitcatcher_test"
 
 # Directory where the Git repository will be cloned
-REPO_DIR="/etc/GitCatcher/$GIT_REPO_DIR"
+REPO_DIR="/etc/GitCatcherScripts/$GIT_REPO_DIR"
+
+mkdir -p /etc/GitCatcherScripts
 
 # Log file for script execution
 LOG_FILE="/var/log/gitcatcher.log"
@@ -63,7 +65,7 @@ if [ ! -d "$REPO_DIR" ]; then
     echo "commithash = $commitHash" >> "$LOG_FILE"
     sendLambda $user_email $status $commitHash >> "$LOG_FILE"
 
-    echo " $(date)
+    echo " $(date
 ----------------------------------------
 " >> "$LOG_FILE"
 
