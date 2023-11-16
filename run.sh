@@ -87,7 +87,7 @@
       rm -rf "$REPO_DIR" 
    
       # Pull the latest changes 
-      git clone -b beta "$GIT_REPO_URL" 
+      git clone -b beta "$GIT_REPO_URL" "$REPO_DIR" 
       # chmod +x "$REPO_DIR"/* 
    
       cd "$REPO_DIR" 
