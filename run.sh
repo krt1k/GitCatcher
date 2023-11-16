@@ -3,14 +3,14 @@
 sendLambda() {
     local userEmail="$1"
     local status="$2"
-    local commitHash="$3"
+    local commitMessage="$3"
 
-    # if commithash is empty then set "unset"
-    if [ -z "$commitHash" ]; then
-        commitHash="unset"
+    # if commitMessage is empty then set "unset"
+    if [ -z "$commitMessage" ]; then
+        commitMessage="unset"
     fi
 
-    curl -X POST -H "Content-Type: application/json" -d "{\"commitHash\":\"$commitHash\",\"userEmail\":\"$userEmail\",\"status\":\"$status\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
+    curl -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"$commitMessage\",\"userEmail\":\"$userEmail\",\"status\":\"$status\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
 
 
     # curl -X POST -H "Content-Type: application/json" -d '"{\"commitHash\":\"25453536\",\"userEmail\":\"user@example.com\",\"status\":\"done\"}"' https://lplicbr2d5i0csadasdasdasdasdaobnl.lambda-url.us-east-1.on.aws/
@@ -61,9 +61,9 @@ if [ ! -d "$REPO_DIR" ]; then
 
     cd "$REPO_DIR"
 
-    commitHash=$(git rev-parse HEAD)
+    commitMessage=$(git log -1 --pretty=%s)
     echo "commithash = $commitHash" >> "$LOG_FILE"
-    sendLambda $user_email $status $commitHash >> "$LOG_FILE"
+    sendLambda $user_email $status $commitMessage >> "$LOG_FILE"
 
     echo " $(date
 ----------------------------------------
@@ -96,7 +96,9 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
     git config --global --add safe.directory "$REPO_DIR"
 
     commitHash=$(git rev-parse HEAD)
-    echo "commithash = $commitHash" >> "$LOG_FILE"
+    commitMessage=$(git log -1 --pretty=%s)
+
+    echo "commithash = $commitHash - $commitMessage" >> "$LOG_FILE"
 
     # Execute the script from the latest commit and log both stdout and stderr
     if bash $REPO_DIR/run.sh >> "$LOG_FILE" 2>&1; then
@@ -109,7 +111,7 @@ if [ "$(git rev-parse HEAD)" != "$(git rev-parse --verify "refs/remotes/origin/$
         echo "Script execution failed on $(date)" >> "$LOG_FILE"
     fi
 
-    sendLambda $user_email $status $commitHash >> "$LOG_FILE"
+    sendLambda $user_email $status $commitMessage >> "$LOG_FILE"
 
     echo " $(date)
 ----------------------------------------
