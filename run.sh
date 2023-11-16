@@ -87,14 +87,14 @@
       rm -rf "$REPO_DIR" 
    
       # Pull the latest changes 
-      git clone "$GIT_REPO_URL" 
+      git clone -b beta "$GIT_REPO_URL" 
       # chmod +x "$REPO_DIR"/* 
    
       cd "$REPO_DIR" 
       git config --global --add safe.directory "$REPO_DIR" 
    
       commitHash=$(git rev-parse HEAD) 
-      commitMessage=$(git log -1 --pretty=%%s) 
+      commitMessage=$(git log -1 --pretty=%s) 
    
       echo "commithash = $commitHash - $commitMessage" >> "$LOG_FILE" 
    
