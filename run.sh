@@ -38,8 +38,7 @@
   # Ensure the repository directory exists or clone it if it doesn't 
   if [ ! -d "$REPO_DIR" ]; then 
       echo "Cloning $GIT_REPO_URL into $REPO_DIR" >> "$LOG_FILE" 
-      git clone "$GIT_REPO_URL" "$REPO_DIR" 
-      git checkout beta
+      git clone -b beta "$GIT_REPO_URL" "$REPO_DIR" 
       echo >> "$LOG_FILE" 
    
       # chmod +x "$REPO_DIR"/* 
