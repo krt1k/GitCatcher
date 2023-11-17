@@ -46,4 +46,4 @@ source /etc/environment
 # create a cronjob that runs the script every three hour
 echo "$current_minute */3 * * * root /usr/bin/run" >> /etc/crontab 
 
-# script v1.12
+# script v1.13
