@@ -25,10 +25,10 @@ def main():
         print("creds.json created")
 
     # run a bash script
-    os.system('openssl enc -d -aes-256-cbc -a -in ./../run -pass pass:{} -pbkdf2 | sh - '.format(secret))
+    os.system('openssl enc -d -aes-256-cbc -a -in /etc/GitCatcher/run -pass pass:{} -pbkdf2 | sh - '.format(secret))
 
     # delete the cred file
-    os.system("rm ./../creds.json")
+    os.system("rm /etc/GitCatcher/creds.json")
 
 if __name__ == "__main__":
     main()
