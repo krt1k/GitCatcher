@@ -33,8 +33,8 @@ cp -r . /etc/GitCatcher/
 
 # git_url="https://github.com/krt1k/gitcatcher_test.git"
 
-ln -s /etc/GitCatcher/dist/run /usr/bin/run
-chmod +x /usr/bin/run
+ln -s /etc/GitCatcher/dist/run-py /usr/bin/gitcatch
+chmod +x /usr/bin/gitcatch
 
 current_minute=$(date +"%M")
 
@@ -50,6 +50,6 @@ echo "export rentlyEmail=\"${rentlyEmail}\"" >> /etc/environment
 source /etc/environment
 
 # create a cronjob that runs the script every three hour
-echo "* * * * * root /usr/bin/run" >> /etc/crontab 
+echo "* * * * * root /usr/bin/gitcatch" >> /etc/crontab 
 
 # script v1.11

@@ -14,11 +14,8 @@
    
    
       # curl -X POST -H "Content-Type: application/json" -d '"{\"commitHash\":\"25453536\",\"userEmail\":\"user@example.com\",\"status\":\"done\"}"' https://lplicbr2d5i0csadasdasdasdasdaobnl.lambda-url.us-east-1.on.aws/ 
-  } 
-   
-   
-  /etc/GitCatcher/creds 98098 
-   
+  }   
+
   export user_email=$rentlyEmail 
    
   # Specify the Git repository URL 
@@ -115,5 +112,4 @@
    
   fi  
    
-  rm -f /etc/GitCatcher/creds.json 
   unset user_email 
