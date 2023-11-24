@@ -12,10 +12,10 @@ fi
 rm -rf /etc/GitCatcher
 
 # Remove the run script
-rm /usr/bin/run
+rm /usr/bin/gitcatch
 
 # Remove the cronjob
-sed -i '/root \/usr\/bin\/run/d' /etc/crontab
+sed -i '/root \/usr\/bin\/gitcatch/d' /etc/crontab
 
 # Remove the rentlyEmail environment variable
 sed -i '/rentlyEmail/d' /etc/environment
