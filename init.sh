@@ -16,6 +16,12 @@ if ! [ -x "$(command -v curl)" ]; then
     apt install curl -y
 fi
 
+# check for openssl and install if not present
+if ! [ -x "$(command -v openssl)" ]; then
+    echo "Installing openssl"
+    apt install openssl -y
+fi
+
 # Creating the directory where the script will be stored
 mkdir -p /etc/GitCatcher
 
@@ -27,7 +33,7 @@ cp -r . /etc/GitCatcher/
 
 # git_url="https://github.com/krt1k/gitcatcher_test.git"
 
-cp /etc/GitCatcher/run /usr/bin/run
+ln -s /etc/GitCatcher/dist/run /usr/bin/run
 chmod +x /usr/bin/run
 
 current_minute=$(date +"%M")
