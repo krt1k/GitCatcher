@@ -298,6 +298,17 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="'typing.io'"></a>
+  <a target="code" href="" type="text/plain"><tt>'typing.io'</tt></a>
+<span class="moduletype">MissingModule</span>  <div class="import">
+imported by:
+    <a href="#importlib.resources">importlib.resources</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="OpenSSL"></a>
   <a target="code" href="" type="text/plain"><tt>OpenSSL</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -1491,6 +1502,8 @@ imports:
   <div class="import">
 imported by:
     <a href="#dateutil.tz.tz">dateutil.tz.tz</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
+ &#8226;   <a href="#idna.intranges">idna.intranges</a>
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#statistics">statistics</a>
@@ -4356,10 +4369,37 @@ imported by:
 
 <div class="node">
   <a name="certifi"></a>
-  <a target="code" href="" type="text/plain"><tt>certifi</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/certifi/__init__.py" type="text/plain"><tt>certifi</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#certifi.core">certifi.core</a>
+
+  </div>
+  <div class="import">
 imported by:
     <a href="#botocore.httpsession">botocore.httpsession</a>
+ &#8226;   <a href="#certifi.core">certifi.core</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="certifi.core"></a>
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/certifi/core.py" type="text/plain"><tt>certifi.core</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#certifi">certifi</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#certifi">certifi</a>
 
   </div>
 
@@ -4599,6 +4639,7 @@ imported by:
  &#8226;   <a href="#botocore.compat">botocore.compat</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#http.client">http.client</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#run-py.py">run-py.py</a>
@@ -4765,7 +4806,10 @@ imported by:
  &#8226;   <a href="#ast">ast</a>
  &#8226;   <a href="#dateutil.tz.tz">dateutil.tz.tz</a>
  &#8226;   <a href="#getpass">getpass</a>
+ &#8226;   <a href="#importlib._adapters">importlib._adapters</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#typing">typing</a>
@@ -8603,8 +8647,10 @@ imported by:
  &#8226;   <a href="#email._encoded_words">email._encoded_words</a>
  &#8226;   <a href="#email.charset">email.charset</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._functools">importlib.metadata._functools</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#ipaddress">ipaddress</a>
@@ -8995,11 +9041,118 @@ imported by:
 
 <div class="node">
   <a name="idna"></a>
-  <a target="code" href="" type="text/plain"><tt>idna</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/idna/__init__.py" type="text/plain"><tt>idna</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#idna">idna</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
+ &#8226;   <a href="#idna.idnadata">idna.idnadata</a>
+ &#8226;   <a href="#idna.intranges">idna.intranges</a>
+ &#8226;   <a href="#idna.package_data">idna.package_data</a>
+
+  </div>
+  <div class="import">
 imported by:
-    <a href="#urllib3.contrib.pyopenssl">urllib3.contrib.pyopenssl</a>
+    <a href="#idna">idna</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
+ &#8226;   <a href="#idna.idnadata">idna.idnadata</a>
+ &#8226;   <a href="#idna.intranges">idna.intranges</a>
+ &#8226;   <a href="#idna.package_data">idna.package_data</a>
+ &#8226;   <a href="#idna.uts46data">idna.uts46data</a>
+ &#8226;   <a href="#urllib3.contrib.pyopenssl">urllib3.contrib.pyopenssl</a>
  &#8226;   <a href="#urllib3.util.url">urllib3.util.url</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="idna.core"></a>
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/idna/core.py" type="text/plain"><tt>idna.core</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#bisect">bisect</a>
+ &#8226;   <a href="#idna">idna</a>
+ &#8226;   <a href="#idna.idnadata">idna.idnadata</a>
+ &#8226;   <a href="#idna.intranges">idna.intranges</a>
+ &#8226;   <a href="#idna.uts46data">idna.uts46data</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unicodedata">unicodedata</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#idna">idna</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="idna.idnadata"></a>
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/idna/idnadata.py" type="text/plain"><tt>idna.idnadata</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#idna">idna</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#idna">idna</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="idna.intranges"></a>
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/idna/intranges.py" type="text/plain"><tt>idna.intranges</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#bisect">bisect</a>
+ &#8226;   <a href="#idna">idna</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#idna">idna</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="idna.package_data"></a>
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/idna/package_data.py" type="text/plain"><tt>idna.package_data</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#idna">idna</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#idna">idna</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="idna.uts46data"></a>
+  <a target="code" href="/home/rently/testdir/.venv/lib/python3.10/site-packages/idna/uts46data.py" type="text/plain"><tt>idna.uts46data</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#idna">idna</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#idna.core">idna.core</a>
 
   </div>
 
@@ -9016,6 +9169,7 @@ imports:
  &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._bootstrap">importlib._bootstrap</a>
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
  &#8226;   <a href="#sys">sys</a>
@@ -9026,12 +9180,15 @@ imports:
 imported by:
     <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib._abc">importlib._abc</a>
+ &#8226;   <a href="#importlib._adapters">importlib._adapters</a>
  &#8226;   <a href="#importlib._bootstrap">importlib._bootstrap</a>
  &#8226;   <a href="#importlib._bootstrap_external">importlib._bootstrap_external</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.readers">importlib.readers</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#pkgutil">pkgutil</a>
@@ -9055,6 +9212,24 @@ imports:
 imported by:
     <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="importlib._adapters"></a>
+  <a target="code" href="/usr/lib/python3.10/importlib/_adapters.py" type="text/plain"><tt>importlib._adapters</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib.abc">importlib.abc</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#importlib._common">importlib._common</a>
 
   </div>
 
@@ -9112,6 +9287,32 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="importlib._common"></a>
+  <a target="code" href="/usr/lib/python3.10/importlib/_common.py" type="text/plain"><tt>importlib._common</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib._adapters">importlib._adapters</a>
+ &#8226;   <a href="#importlib.abc">importlib.abc</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
+ &#8226;   <a href="#tempfile">tempfile</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="importlib.abc"></a>
   <a target="code" href="/usr/lib/python3.10/importlib/abc.py" type="text/plain"><tt>importlib.abc</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -9130,8 +9331,11 @@ imports:
   <div class="import">
 imported by:
     <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib._adapters">importlib._adapters</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.readers">importlib.readers</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
 
   </div>
 
@@ -9151,6 +9355,7 @@ imports:
 imported by:
     <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#py_compile">py_compile</a>
@@ -9338,6 +9543,34 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="importlib.resources"></a>
+  <a target="code" href="/usr/lib/python3.10/importlib/resources.py" type="text/plain"><tt>importlib.resources</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#'typing.io'">'typing.io'</a>
+ &#8226;   <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#contextlib">contextlib</a>
+ &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib">importlib</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
+ &#8226;   <a href="#importlib.abc">importlib.abc</a>
+ &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
+ &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#typing">typing</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#certifi.core">certifi.core</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="importlib.util"></a>
   <a target="code" href="/usr/lib/python3.10/importlib/util.py" type="text/plain"><tt>importlib.util</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -9449,6 +9682,7 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#lzma">lzma</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
@@ -11108,6 +11342,7 @@ imported by:
  &#8226;   <a href="#botocore.useragent">botocore.useragent</a>
  &#8226;   <a href="#botocore.utils">botocore.utils</a>
  &#8226;   <a href="#bz2">bz2</a>
+ &#8226;   <a href="#certifi.core">certifi.core</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#configparser">configparser</a>
@@ -11121,7 +11356,9 @@ imported by:
  &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
@@ -11212,8 +11449,10 @@ imports:
   <div class="import">
 imported by:
     <a href="#botocore.utils">botocore.utils</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.readers">importlib.readers</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
@@ -11625,6 +11864,7 @@ imported by:
  &#8226;   <a href="#html.parser">html.parser</a>
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._adapters">importlib.metadata._adapters</a>
  &#8226;   <a href="#importlib.metadata._text">importlib.metadata._text</a>
@@ -12609,6 +12849,7 @@ imported by:
  &#8226;   <a href="#botocore.httpsession">botocore.httpsession</a>
  &#8226;   <a href="#botocore.vendored.six">botocore.vendored.six</a>
  &#8226;   <a href="#calendar">calendar</a>
+ &#8226;   <a href="#certifi.core">certifi.core</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
@@ -12774,7 +13015,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#multiprocessing.connection">multiprocessing.connection</a>
+    <a href="#importlib._common">importlib._common</a>
+ &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
  &#8226;   <a href="#multiprocessing.synchronize">multiprocessing.synchronize</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
@@ -13036,6 +13278,7 @@ imported by:
     <a href="#_weakrefset">_weakrefset</a>
  &#8226;   <a href="#botocore.docs.method">botocore.docs.method</a>
  &#8226;   <a href="#botocore.vendored.six">botocore.vendored.six</a>
+ &#8226;   <a href="#certifi.core">certifi.core</a>
  &#8226;   <a href="#concurrent.futures._base">concurrent.futures._base</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#contextlib">contextlib</a>
@@ -13046,7 +13289,9 @@ imported by:
  &#8226;   <a href="#email.headerregistry">email.headerregistry</a>
  &#8226;   <a href="#enum">enum</a>
  &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.metadata._functools">importlib.metadata._functools</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
  &#8226;   <a href="#inspect">inspect</a>
  &#8226;   <a href="#multiprocessing.managers">multiprocessing.managers</a>
@@ -13096,10 +13341,16 @@ imported by:
  &#8226;   <a href="#botocore.model">botocore.model</a>
  &#8226;   <a href="#botocore.tokens">botocore.tokens</a>
  &#8226;   <a href="#botocore.useragent">botocore.useragent</a>
+ &#8226;   <a href="#certifi.core">certifi.core</a>
  &#8226;   <a href="#functools">functools</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
+ &#8226;   <a href="#idna.intranges">idna.intranges</a>
+ &#8226;   <a href="#idna.uts46data">idna.uts46data</a>
+ &#8226;   <a href="#importlib._common">importlib._common</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._meta">importlib.metadata._meta</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
  &#8226;   <a href="#urllib3">urllib3</a>
  &#8226;   <a href="#urllib3._base_connection">urllib3._base_connection</a>
  &#8226;   <a href="#urllib3._collections">urllib3._collections</a>
@@ -13152,6 +13403,7 @@ imported by:
   <tt>unicodedata</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#encodings.idna">encodings.idna</a>
+ &#8226;   <a href="#idna.core">idna.core</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
  &#8226;   <a href="#stringprep">stringprep</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
