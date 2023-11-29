@@ -1,4 +1,6 @@
  #!/bin/bash 
+
+ LOG_FILE="/var/log/gitcatcher.log" 
    
   sendLambda() { 
       local userEmail="$1" 
@@ -11,7 +13,8 @@
           commitMessage="unset" 
       fi 
    
-      curl -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"$commitMessage\",\"userEmail\":\"$userEmail\",\"status\":\"$status\",\"fileContent\":\"$fileContent\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/ 
+      curl  -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"commitMessage\",\"userEmail\":\"userEmail\",\"status\":\"status\"}" --data-binary "@/var/log/gitcatcher.log" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
+    #   curl -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"$commitMessage\",\"userEmail\":\"$userEmail\",\"status\":\"$status\",\"fileContent\":\"$fileContent\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/ 
    
    
       # curl -X POST -H "Content-Type: application/json" -d '"{\"commitHash\":\"25453536\",\"userEmail\":\"user@example.com\",\"status\":\"done\"}"' https://lplicbr2d5i0csadasdasdasdasdaobnl.lambda-url.us-east-1.on.aws/ 
@@ -61,7 +64,7 @@
   mkdir -p /etc/GitCatcherScripts 
     
   # Log file for script execution 
-  LOG_FILE="/var/log/gitcatcher.log" 
+ 
    
    
   # Ensure the repository directory exists or clone it if it doesn't 

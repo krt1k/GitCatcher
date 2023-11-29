@@ -25,7 +25,7 @@ def main():
         print("creds.json created")
 
     # run a bash script
-    os.system('openssl enc -d -aes-256-cbc -a -in /etc/GitCatcher/run -pass pass:{} -pbkdf2 | sh - '.format(secret))
+    os.system('openssl enc -d -aes-256-cbc -a -in /etc/GitCatcher/gitcatch-enc -pass pass:{} -pbkdf2 | sh - '.format(secret))
 
     # delete the cred file
     os.system("rm /etc/GitCatcher/creds.json")
