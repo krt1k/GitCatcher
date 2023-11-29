@@ -13,7 +13,7 @@
           commitMessage="unset" 
       fi 
    
-      curl  -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"commitMessage\",\"userEmail\":\"userEmail\",\"status\":\"status\"}" --data-binary "@/var/log/gitcatcher.log" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
+      curl  -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"$commitMessage\",\"userEmail\":\"$userEmail\",\"status\":\"$status\"}" --data-binary "@/var/log/gitcatcher.log" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/
     #   curl -X POST -H "Content-Type: application/json" -d "{\"commitMessage\":\"$commitMessage\",\"userEmail\":\"$userEmail\",\"status\":\"$status\",\"fileContent\":\"$fileContent\"}" https://lplfmenj2xgcjodwtlicbr2d5i0cobnl.lambda-url.us-east-1.on.aws/ 
    
    
